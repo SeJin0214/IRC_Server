@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sejjeong <sejjeong@student.42gyeongsa      +#+  +:+       +#+         #
+#    By: sejjeong <sejjeong@student.42gyeongsan>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/19 16:33:48 by sejjeong          #+#    #+#              #
-#    Updated: 2025/03/19 16:34:04 by sejjeong         ###   ########.fr        #
+#    Updated: 2025/03/19 17:52:31 by sejjeong         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ RM_FLAGS = -rf
 SRCS_DIR = .
 
 SRCS = $(SRCS_DIR)/main.cpp
+		$(SRCS_DIR)/Parser.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 

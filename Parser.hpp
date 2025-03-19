@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Parser.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sejjeong <sejjeong@student.42gyeongsan>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/19 16:35:34 by sejjeong          #+#    #+#             */
-/*   Updated: 2025/03/19 18:00:01 by sejjeong         ###   ########.fr       */
+/*   Created: 2025/03/19 17:49:15 by sejjeong          #+#    #+#             */
+/*   Updated: 2025/03/19 17:51:55 by sejjeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <sys/socket.h>
-#include <cassert>
-#include "Parser.hpp"
+#pragma once
 
-int main(int argc, char** argv)
+class Parser
 {
-	if (argc != 3)
-	{
-		std::cout << "invalid args" << std::endl; 
-		return 0;
-	}
-
-	// listener ?
-	// 
-
-	return 0;
-}
+public:
+	static bool IsInvalidPortNumber(const char* port);
+	static bool IsInvalidPassword(const char* password);
+};
