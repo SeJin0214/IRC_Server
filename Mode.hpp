@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Mode.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sejjeong <sejjeong@student.42gyeongsan>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/19 16:35:34 by sejjeong          #+#    #+#             */
-/*   Updated: 2025/03/26 22:19:57 by sejjeong         ###   ########.fr       */
+/*   Created: 2025/03/26 15:01:36 by sejjeong          #+#    #+#             */
+/*   Updated: 2025/03/26 15:29:42 by sejjeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Server.hpp"
+#pragma once
 
-// IPv4, TCP 
-int main(int argc, char** argv)
+enum eMode
 {
-	if (argc != 3)
-	{
-		std::cerr << "사용법 : " << argv[0] << " <port number> <password>" << std::endl;
-		return 0;
-	}
-
-	std::cout << "연결 대기중... " << std::endl;
-	Server server(argv[1], argv[2]);
-	server.run();
-	
-	return 0;
-}
+	MODE_INVITE_ONLY,
+	MODE_TITLE_LOCK,
+	MODE_PASSWORD_PROTECTED,
+	MODE_OPERATOR_ONLY,
+	MODE_USER_LIMIT
+};

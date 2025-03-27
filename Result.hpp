@@ -1,30 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Result.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sejjeong <sejjeong@student.42gyeongsan>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/19 16:35:34 by sejjeong          #+#    #+#             */
-/*   Updated: 2025/03/26 22:19:57 by sejjeong         ###   ########.fr       */
+/*   Created: 2025/03/26 23:42:19 by sejjeong          #+#    #+#             */
+/*   Updated: 2025/03/26 23:53:37 by sejjeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Server.hpp"
+#pragma once
 
-// IPv4, TCP 
-int main(int argc, char** argv)
+template <typename T>
+class Result
 {
-	if (argc != 3)
-	{
-		std::cerr << "사용법 : " << argv[0] << " <port number> <password>" << std::endl;
-		return 0;
-	}
 
-	std::cout << "연결 대기중... " << std::endl;
-	Server server(argv[1], argv[2]);
-	server.run();
+public:
+	Result(T value, bool bSucceed);
+	T getValue();
+	bool isSucceed();
+
+private:
+	T mValue;
+	bool mbSucceed;
+
+};
+
+template <typename T>
+Result<T>::Result(T value, bool bSucceed)
+: mValue(value)
+, mbSucceed(bSucceed)
+{
 	
-	return 0;
+}
+
+template <typename T>
+T Result<T>::getValue()
+{
+	return mValue;
+}
+
+template <typename T>
+bool Result<T>::isSucceed()
+{
+	return mbSucceed;
 }

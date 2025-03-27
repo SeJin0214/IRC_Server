@@ -6,7 +6,7 @@
 #    By: sejjeong <sejjeong@student.42gyeongsan>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/19 16:33:48 by sejjeong          #+#    #+#              #
-#    Updated: 2025/03/24 19:01:23 by sejjeong         ###   ########.fr        #
+#    Updated: 2025/03/26 15:47:25 by sejjeong         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,10 +19,14 @@ RM_FLAGS = -rf
 
 SRCS_DIR = .
 
-SRCS = $(SRCS_DIR)/main.cpp
-		$(SRCS_DIR)/Parser.cpp
-		$(SRCS_DIR)/Channel.cpp
-#$(SRCS_DIR)/User.cpp
+SRCS = $(SRCS_DIR)/main.cpp \
+		$(SRCS_DIR)/Server.cpp \
+		$(SRCS_DIR)/Space.cpp \
+		$(SRCS_DIR)/Channel.cpp \
+		$(SRCS_DIR)/User.cpp \
+		$(SRCS_DIR)/Lobby.cpp \
+		$(SRCS_DIR)/Util.cpp
+
 
 OBJS = ${SRCS:.cpp=.o}
 
