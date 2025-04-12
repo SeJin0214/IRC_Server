@@ -1,69 +1,56 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
+#    makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: sejjeong <sejjeong@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/04/11 17:30:52 by sejjeong          #+#    #+#              #
+#    Updated: 2025/04/11 17:42:33 by sejjeong         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: sejjeong <sejjeong@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/19 16:33:48 by sejjeong          #+#    #+#              #
-#    Updated: 2025/04/12 16:24:31 by sejjeong         ###   ########.fr        #
+#    Updated: 2025/04/11 13:40:24 by sejjeong         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ircserv
+NAME = bot
 C++ = c++
 FLAGS= -Wall -Wextra -Werror -std=c++98 -g
 
 RM = rm
 RM_FLAGS = -rf
 
-SRCS_DIR = .
+SRCS_DIR = ..
 CORE_DIR = $(SRCS_DIR)/core
 COMMAND_DIR = $(SRCS_DIR)/command
 PARSER_DIR = $(SRCS_DIR)/parser
-BOT_DIR = $(SRCS_DIR)/bot
+BOT_DIR = .
 INCLUDE = -I $(CORE_DIR) -I $(COMMAND_DIR) -I $(PARSER_DIR)
 
-SRCS = $(SRCS_DIR)/main.cpp \
-		$(CORE_DIR)/Channel.cpp \
-		$(CORE_DIR)/Lobby.cpp \
-		$(CORE_DIR)/LoggedInSpace.cpp \
-		$(CORE_DIR)/LoginInfo.cpp \
-		$(CORE_DIR)/Server.cpp \
-		$(CORE_DIR)/Space.cpp \
-		$(CORE_DIR)/User.cpp \
-		$(CORE_DIR)/Util.cpp \
-		$(CORE_DIR)/MessageBetch.cpp \
-		$(COMMAND_DIR)/CommonCommand.cpp \
-		$(COMMAND_DIR)/DirectMessageCommand.cpp \
-		$(COMMAND_DIR)/ErrorCommand.cpp \
-		$(COMMAND_DIR)/InviteCommand.cpp \
-		$(COMMAND_DIR)/JoinCommand.cpp \
-		$(COMMAND_DIR)/KickCommand.cpp \
-		$(COMMAND_DIR)/ListCommand.cpp \
-		$(COMMAND_DIR)/ModeCommand.cpp \
-		$(COMMAND_DIR)/NickCommand.cpp \
-		$(COMMAND_DIR)/PartCommand.cpp \
-		$(COMMAND_DIR)/PassCommand.cpp \
-		$(COMMAND_DIR)/QuitCommand.cpp \
-		$(COMMAND_DIR)/SendChannelMessageCommand.cpp \
-		$(COMMAND_DIR)/TopicCommand.cpp \
-		$(COMMAND_DIR)/UserCommand.cpp \
-		$(COMMAND_DIR)/WhoCommand.cpp \
+SRCS = $(BOT_DIR)/main.cpp \
+		$(BOT_DIR)/Bot.cpp \
 		$(PARSER_DIR)/Parser.cpp
 
 
 OBJS = ${SRCS:.cpp=.o}
 
+
 $(NAME): $(OBJS)
-			make -C $(BOT_DIR)
 		   $(C++) $(FLAGS) $(INCLUDE) $^ -o $@
 
 %.o: %.cpp
 	$(C++) $(FLAGS) $(INCLUDE) -c $< -o $@ 
 
 all: $(NAME)
-	
 
 clean:
 	$(RM) $(RM_FLAGS) $(OBJS)

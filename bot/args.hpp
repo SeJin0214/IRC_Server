@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   args.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sejjeong <sejjeong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/19 16:35:34 by sejjeong          #+#    #+#             */
-/*   Updated: 2025/04/11 12:30:52 by sejjeong         ###   ########.fr       */
+/*   Created: 2025/04/11 15:38:12 by sejjeong          #+#    #+#             */
+/*   Updated: 2025/04/11 15:38:49 by sejjeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 
-#include <iostream>
-#include "Server.hpp"
-
-// IPv4, TCP
-int main(int argc, char** argv)
+enum eArgs
 {
-	if (argc != 3)
-	{
-		std::cerr << "사용법 : " << argv[0] << " <port number> <password>" << std::endl;
-		return 0;
-	}
-
-	std::cout << "연결 대기중... " << std::endl;
-	Server server(argv[1], argv[2]);
-	server.run();
-	
-	return 0;
-}
+    ARGS_PORT = 1,
+    ARGS_PASSWORD,
+    ARGS_NICKNAME,
+    ARGS_USERNAME  
+};

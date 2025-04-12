@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ListCommand.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sejjeong <sejjeong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/19 16:35:34 by sejjeong          #+#    #+#             */
-/*   Updated: 2025/04/11 12:30:52 by sejjeong         ###   ########.fr       */
+/*   Created: 2025/04/12 15:01:19 by sejjeong          #+#    #+#             */
+/*   Updated: 2025/04/12 15:04:23 by sejjeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
+#include "IOutgoingMessageProvider.hpp"
 
-#include <iostream>
-#include "Server.hpp"
-
-// IPv4, TCP
-int main(int argc, char** argv)
+class ListCommand : public IOutgoingMessageProvider
 {
-	if (argc != 3)
-	{
-		std::cerr << "사용법 : " << argv[0] << " <port number> <password>" << std::endl;
-		return 0;
-	}
 
-	std::cout << "연결 대기중... " << std::endl;
-	Server server(argv[1], argv[2]);
-	server.run();
-	
-	return 0;
-}
+public:
+	MessageBetch getMessageBetch(const Server& server, const int clientSocket, const char* buffer) const;
+
+};

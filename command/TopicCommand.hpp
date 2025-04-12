@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   TopicCommand.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sejjeong <sejjeong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/19 16:35:34 by sejjeong          #+#    #+#             */
-/*   Updated: 2025/04/11 12:30:52 by sejjeong         ###   ########.fr       */
+/*   Created: 2025/04/03 11:40:16 by sejjeong          #+#    #+#             */
+/*   Updated: 2025/04/08 19:24:44 by sejjeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
+#include "IExecutable.hpp"
+#include "IOutgoingMessageProvider.hpp"
 
-#include <iostream>
-#include "Server.hpp"
-
-// IPv4, TCP
-int main(int argc, char** argv)
+class TopicCommand : public IOutgoingMessageProvider, public IExecutable
 {
-	if (argc != 3)
-	{
-		std::cerr << "사용법 : " << argv[0] << " <port number> <password>" << std::endl;
-		return 0;
-	}
-
-	std::cout << "연결 대기중... " << std::endl;
-	Server server(argv[1], argv[2]);
-	server.run();
-	
-	return 0;
-}
+public:
+    MessageBetch getMessageBetch(const Server& server, const int clientSocket, const char* buffer) const;
+    void execute(Server& server, const int clientSocket, const char* buffer);
+    
+};

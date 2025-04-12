@@ -1,0 +1,7 @@
+PASS sejjeong
+USER aaa * * :dasda asdas
+NICK aaa2
+
+JOIN #aaa
+PART #aaa
+
