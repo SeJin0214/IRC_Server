@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Server.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sejjeong <sejjeong@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sejjeong <sejjeong@student.42gyeongsan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 12:40:43 by sejjeong          #+#    #+#             */
-/*   Updated: 2025/04/12 17:21:25 by sejjeong         ###   ########.fr       */
+/*   Updated: 2025/04/16 17:32:34 by sejjeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -295,7 +295,6 @@ Channel* Server::findChannelOrNull(const int clientSocket) const
 	return NULL;
 }
 
- 
 bool Server::trySetAuthenticatedInLoggedSpace(const int clientSocket)
 {
 	return mLoggedInSpace.trySetAuthenticated(clientSocket);

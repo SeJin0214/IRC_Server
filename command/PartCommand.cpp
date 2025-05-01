@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PartCommand.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sejjeong <sejjeong@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sejjeong <sejjeong@student.42gyeongsan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 11:41:48 by sejjeong          #+#    #+#             */
-/*   Updated: 2025/04/12 17:32:54 by sejjeong         ###   ########.fr       */
+/*   Updated: 2025/04/16 17:25:16 by sejjeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
