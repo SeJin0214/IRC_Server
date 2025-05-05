@@ -46,6 +46,7 @@ public:
 	User* exitUserInChannel(const int clientSocket, const std::string& title);
 	
 	void exitAllSpaces(const int clientSocket);
+	
 	Channel* findChannelOrNull(const std::string& title) const;
 	std::vector<const Channel*> loadChannels() const;
 	bool isDuplicatedNickname(const char* buffer) const;
