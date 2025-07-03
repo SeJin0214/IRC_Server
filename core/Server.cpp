@@ -68,6 +68,8 @@ Server::Server(const char* port, const char* password)
 	serverAddr.sin_family = AF_INET;
     serverAddr.sin_addr.s_addr = INADDR_ANY;
     serverAddr.sin_port = htons(mPort);
+
+
 	if (bind(mServerSocket, (const sockaddr *)&serverAddr, sizeof(sockaddr_in)) == SYSCALL_FAIL)
 	{
 		std::cerr << "fail bind" << std::endl;
@@ -144,9 +146,9 @@ unsigned int Server::getPassword() const
 fd_set Server::getFdSet() const
 {
 	fd_set master;
-	
+
 	FD_ZERO(&master);
-	
+
 	FD_SET(mServerSocket, &master);
 	FD_SET(STDIN_FILENO, &master);
 
