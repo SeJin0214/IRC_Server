@@ -207,7 +207,6 @@ bool Channel::isModeActive(const eMode mode)
 }
 
 
-
 bool Channel::onMode(const int userSocket, const eMode mode)
 {
 	if (isOperator(userSocket) == false)
