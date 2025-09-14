@@ -24,6 +24,10 @@
 make  
 ./ircserv 6667 <password>
 
+
+https://github.com/user-attachments/assets/60a9d745-d6e6-4fba-a552-e3a95d8b8099
+
+
 irssi 설치 방법  
 sudo apt update  
 sudo apt install -y irssi  
