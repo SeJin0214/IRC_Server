@@ -20,10 +20,13 @@
 
 ## 실행
 
-#### 1. netcat
+서버 실행  
+make  
+./ircserv 6667 <password>
 
-
-#### 2. irssi
+irssi 설치 방법  
+sudo apt update  
+sudo apt install -y irssi  
 
 
 
