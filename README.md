@@ -9,6 +9,7 @@
 운영체제 : Ubuntu  
 언어/표준 : C++ (C++98, 요구사항)  
 빌드 : GNU Make (요구 사항)  
+코딩 표준 : POCU C++ https://docs.popekim.com/ko/coding-standards/pocu-cpp  
 
 ## 핵심 기능   
 - [O] 커맨드 공통 인터페이스(CommonCommand) + 확장 클래스로 각 명령 모듈화    
