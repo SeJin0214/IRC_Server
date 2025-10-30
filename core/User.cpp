@@ -152,6 +152,6 @@ void User::removeJoinedChannel(std::string channelName)
 
 std::string User::getJoinedChannelName(size_t indexOfJoinedChannels)
 {
-	assert(indexOfJoinedChannels < mJoinedChannels.size() - 1);
+	assert(indexOfJoinedChannels < mJoinedChannels.size());
 	return (mJoinedChannels[indexOfJoinedChannels]);
 }
